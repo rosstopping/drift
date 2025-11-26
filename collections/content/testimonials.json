@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Amanda & David K.",
+    "name": "Amanda & David K.",
+    "role": "Married Couple",
+    "location": "Edinburgh",
+    "service": "Relationship Harmony Coaching",
+    "rating": 5,
+    "featured": true,
+    "order": 4,
+    "content": "The techniques we learned through relationship coaching completely transformed how we connect with each other. We went from constant arguments to actually understanding each other's perspectives. Our communication is deeper and more authentic than it's been in years, and we feel like partners again rather than roommates.",
+    "link": "/testimonials/amanda-david-k"
+  },
+  {
+    "title": "Emma L.",
+    "name": "Emma L.",
+    "role": "Teacher",
+    "location": "Bristol",
+    "service": "Personal Growth Coaching",
+    "rating": 5,
+    "featured": true,
+    "order": 3,
+    "content": "I was stuck in patterns of negative self-talk and limiting beliefs that kept me playing small. Through our sessions, I learned to recognize these patterns and replace them with empowering thoughts. The shift has been incredible - I'm taking on challenges I would have avoided before and feeling excited about my potential instead of fearful.",
+    "link": "/testimonials/emma-l"
+  },
+  {
+    "title": "James T.",
+    "name": "James T.",
+    "role": "Marketing Director",
+    "location": "Birmingham",
+    "service": "Career Transformation Coaching",
+    "rating": 5,
+    "featured": true,
+    "order": 5,
+    "content": "I was feeling completely stuck in my career, unsure of my next steps and lacking the confidence to make bold moves. The coaching process helped me identify my core strengths and create a strategic plan for advancement. Within four months, I landed a promotion I'd been hoping for and now have a clear roadmap for continued growth.",
+    "link": "/testimonials/james-t"
+  },
+  {
+    "title": "Jessica M.",
+    "name": "Jessica M.",
+    "role": "Marketing Executive",
+    "location": "London",
+    "service": "Personal Growth Coaching",
+    "rating": 5,
+    "featured": true,
+    "order": 1,
+    "content": "Before coaching, I felt like I was drifting through life without purpose or direction. The process helped me uncover what truly matters to me and create actionable steps toward my goals. I now wake up each day with clarity and motivation, knowing exactly where I'm headed and why it matters.",
+    "link": "/testimonials/jessica-m"
+  },
+  {
+    "title": "Michael R.",
+    "name": "Michael R.",
+    "role": "Business Consultant",
+    "location": "Manchester",
+    "service": "Career Transformation Coaching",
+    "rating": 5,
+    "featured": true,
+    "order": 2,
+    "content": "Making a major career change felt overwhelming and risky, but the structured approach we developed made it manageable and strategic. I learned to break down my big vision into achievable milestones and gained the confidence to network effectively in my new field. The transition has been smoother than I ever imagined possible.",
+    "link": "/testimonials/michael-r"
+  },
+  {
+    "title": "Sophie R.",
+    "name": "Sophie R.",
+    "role": "Artist",
+    "location": "Bristol",
+    "service": "Personal Growth Coaching",
+    "rating": 5,
+    "featured": true,
+    "order": 6,
+    "content": "I had been struggling with perfectionism that was paralyzing my creativity and preventing me from sharing my work with others. Through our sessions, I learned to embrace imperfection as part of the creative process and developed the courage to put my art out into the world. My confidence has soared, and I'm creating more freely than ever.",
+    "link": "/testimonials/sophie-r"
+  }
+]

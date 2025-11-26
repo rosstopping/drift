@@ -1,0 +1,23 @@
+<layout title="{frontmatter.title}" src="main.html">
+
+	<!-- Hero Section -->
+	<div class="relative pt-20 pb-24 bg-black">
+		<img class="absolute inset-0 w-full h-full opacity-25 object-cover" src="{frontmatter.featured_image}" />
+
+		<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+			<h1 data-aos="fade-in" class="text-5xl font-display font-semibold text-white mb-6">
+				{frontmatter.title}
+			</h1>
+		</div>
+	</div>
+
+	<!-- Main Content -->
+	<article class="py-20">
+		<div class="max-w-4xl mx-auto px-6">
+			<div class="prose prose-lg prose-zinc max-w-none" data-aos="fade-in">
+				{content}
+			</div>
+		</div>
+	</article>
+
+</layout>

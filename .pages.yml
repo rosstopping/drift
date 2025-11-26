@@ -1,0 +1,816 @@
+# Pages CMS Configuration for WeHarmonise
+# Media configuration
+media:
+  input: assets/images
+  output: /assets/images
+
+# Content types
+content:
+  # Global Settings
+  - label: Global Settings
+    name: global-settings
+    path: content/global/settings.md
+    type: file
+    fields:
+      - label: Site Name
+        name: name
+        type: string
+        required: true
+        description: The name of your website (used in header/footer)
+
+  # Home page
+  - label: Home Page
+    name: home
+    path: content/index.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+        description: SEO description for the home page
+        required: true
+      - label: Hero Headline
+        name: hero_headline
+        type: string
+        required: true
+      - label: Hero Subheading
+        name: hero_subheading
+        type: text
+        required: true
+      - label: Hero Image
+        name: hero_image
+        type: image
+        required: true
+      - label: CTA Button Text
+        name: hero_cta_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: hero_cta_url
+        type: string
+        required: true
+      - label: Section Headline
+        name: section_headline
+        type: string
+        description: Main headline after hero section
+        required: true
+      - label: Why Us Section Title
+        name: why_headline
+        type: string
+        required: true
+      - label: Why Us Background Image
+        name: why_background_image
+        type: image
+        required: true
+      - label: Why Point 1 Title
+        name: why_point_1_title
+        type: string
+        required: true
+      - label: Why Point 1 Text
+        name: why_point_1_text
+        type: text
+        required: true
+      - label: Why Point 2 Title
+        name: why_point_2_title
+        type: string
+        required: true
+      - label: Why Point 2 Text
+        name: why_point_2_text
+        type: text
+        required: true
+      - label: Why Point 3 Title
+        name: why_point_3_title
+        type: string
+        required: true
+      - label: Why Point 3 Text
+        name: why_point_3_text
+        type: text
+        required: true
+      - label: Why Point 4 Title
+        name: why_point_4_title
+        type: string
+        required: true
+      - label: Why Point 4 Text
+        name: why_point_4_text
+        type: text
+        required: true
+      - label: Why CTA Button Text
+        name: why_cta_text
+        type: string
+        required: true
+      - label: Why CTA Button URL
+        name: why_cta_url
+        type: string
+        required: true
+      - label: About Section Headline
+        name: about_headline
+        type: string
+        required: true
+      - label: About Text 1
+        name: about_text_1
+        type: text
+        required: true
+      - label: About Image 1
+        name: about_image_1
+        type: image
+        required: true
+      - label: About Text 2
+        name: about_text_2
+        type: text
+        required: true
+      - label: About Text 3
+        name: about_text_3
+        type: text
+        required: true
+      - label: About Image 2
+        name: about_image_2
+        type: image
+        required: true
+      - label: About Text 4
+        name: about_text_4
+        type: text
+        required: true
+      - label: About Text 5
+        name: about_text_5
+        type: text
+        required: true
+      - label: About Link Text
+        name: about_link_text
+        type: string
+        required: true
+      - label: About Link URL
+        name: about_link_url
+        type: string
+        required: true
+      - label: Testimonial Quote
+        name: testimonial_quote
+        type: text
+        required: true
+      - label: Testimonial Name
+        name: testimonial_name
+        type: string
+        required: true
+      - label: Testimonial Title
+        name: testimonial_title
+        type: string
+        required: true
+      - label: Testimonial CTA Text
+        name: testimonial_cta_text
+        type: string
+        required: true
+      - label: Testimonial CTA URL
+        name: testimonial_cta_url
+        type: string
+        required: true
+      - label: CTA Section Subtitle
+        name: cta_subtitle
+        type: string
+        required: true
+      - label: CTA Section Title
+        name: cta_title
+        type: string
+        required: true
+      - label: CTA Button Text
+        name: cta_button_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: cta_button_url
+        type: string
+        required: true
+      - label: CTA Background Image
+        name: cta_image
+        type: image
+        required: true
+
+  # Menu collection
+  - label: Menu Items
+    name: menu
+    path: collections/menu.json
+    type: file
+    format: json
+    fields:
+      - label: Menu Items
+        name: items
+        type: object
+        list: true
+        fields:
+          - label: Title
+            name: title
+            type: string
+            required: true
+            description: Text to display in the menu
+          - label: Link
+            name: link
+            type: string
+            required: true
+            description: URL path (e.g., /, /about, /contact)
+          - label: Order
+            name: order
+            type: number
+            description: Display order (lower numbers first)
+
+  # Blog posts collection
+  - label: Blog Posts
+    name: posts
+    path: content/posts
+    type: collection
+    filename: "{year}-{month}-{day}.md"
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Publication Date
+        name: date
+        type: date
+        required: true
+      - label: Author
+        name: author
+        type: string
+        required: true
+      - label: Featured Image
+        name: featured_image
+        type: image
+      - label: Excerpt
+        name: excerpt
+        type: text
+        description: Short description for blog listing
+      - label: Published
+        name: published
+        type: boolean
+        default: false
+      - label: Content
+        name: body
+        type: rich-text
+        required: true
+    view:
+      fields: [title, date, author, published]
+      primary: title
+
+  # Services pages
+  - label: Services
+    name: services
+    path: content/services
+    type: collection
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Description
+        name: description
+        type: text
+      - label: Service Icon
+        name: icon
+        type: image
+      - label: Featured
+        name: featured
+        type: boolean
+        default: false
+      - label: Content
+        name: body
+        type: rich-text
+        required: true
+    view:
+      fields: [title, featured]
+      primary: title
+
+  # Testimonials collection
+  - label: Testimonials
+    name: testimonials
+    path: content/testimonials
+    type: collection
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+        description: Internal title for organization
+      - label: Client Name
+        name: name
+        type: string
+        required: true
+        description: Name to display on the testimonial
+      - label: Role/Occupation
+        name: role
+        type: string
+        required: true
+      - label: Location
+        name: location
+        type: string
+        required: true
+      - label: Service
+        name: service
+        type: string
+        required: true
+        description: Which service they used
+      - label: Rating
+        name: rating
+        type: number
+        default: 5
+        required: true
+        description: Star rating (1-5)
+      - label: Featured
+        name: featured
+        type: boolean
+        default: false
+        description: Show this testimonial prominently
+      - label: Display Order
+        name: order
+        type: number
+        description: Order in which testimonials appear (lower numbers first)
+      - label: Testimonial Content
+        name: body
+        type: rich-text
+        required: true
+        description: The testimonial text
+    view:
+      fields: [name, service, rating, featured]
+      primary: name
+
+  # About page
+  - label: About Page
+    name: about
+    path: content/about.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: CTA Section Title
+        name: cta_title
+        type: string
+        required: true
+      - label: CTA Description
+        name: cta_description
+        type: text
+        required: true
+      - label: CTA Button Text
+        name: cta_button_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: cta_button_url
+        type: string
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Contact page
+  - label: Contact Page
+    name: contact
+    path: content/contact.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: Contact Title
+        name: contact_title
+        type: string
+        required: true
+      - label: Contact Description
+        name: contact_description
+        type: text
+        required: true
+      - label: Email
+        name: email
+        type: string
+        required: true
+      - label: Phone
+        name: phone
+        type: string
+        required: true
+      - label: Address
+        name: address
+        type: text
+        required: true
+      - label: Office Hours Title
+        name: office_hours_title
+        type: string
+        required: true
+      - label: Office Hours
+        name: office_hours
+        type: text
+        required: true
+      - label: Social Title
+        name: social_title
+        type: string
+        required: true
+      - label: Facebook URL
+        name: facebook_url
+        type: string
+      - label: Instagram URL
+        name: instagram_url
+        type: string
+      - label: Main Content
+        name: body
+        type: rich-text
+      - name: services
+        label: Services
+        type: block
+        list: true
+        blocks:
+          - name: text
+            label: Service
+            fields:
+              - name: name
+                label: Name
+                type: string
+
+  # Blog page
+  - label: Blog Page
+    name: blog
+    path: content/blog.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Services page
+  - label: Services Page
+    name: services-page
+    path: content/services.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Testimonials page
+  - label: Testimonials Page
+    name: testimonials-page
+    path: content/testimonials.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: CTA Section Title
+        name: cta_title
+        type: string
+        required: true
+      - label: CTA Description
+        name: cta_description
+        type: text
+        required: true
+      - label: CTA Button Text
+        name: cta_button_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: cta_button_url
+        type: string
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # FAQ page
+  - label: FAQ Page
+    name: faq
+    path: content/faq.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: CTA Section Title
+        name: cta_title
+        type: string
+        required: true
+      - label: CTA Description
+        name: cta_description
+        type: text
+        required: true
+      - label: CTA Button Text
+        name: cta_button_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: cta_button_url
+        type: string
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Resources page
+  - label: Resources Page
+    name: resources
+    path: content/resources.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: CTA Section Title
+        name: cta_title
+        type: string
+        required: true
+      - label: CTA Description
+        name: cta_description
+        type: text
+        required: true
+      - label: CTA Button Text
+        name: cta_button_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: cta_button_url
+        type: string
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Events page
+  - label: Events Page
+    name: events
+    path: content/events.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: CTA Section Title
+        name: cta_title
+        type: string
+        required: true
+      - label: CTA Description
+        name: cta_description
+        type: text
+        required: true
+      - label: CTA Button Text
+        name: cta_button_text
+        type: string
+        required: true
+      - label: CTA Button URL
+        name: cta_button_url
+        type: string
+        required: true
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Privacy Policy page
+  - label: Privacy Policy
+    name: privacy-policy
+    path: content/privacy-policy.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: Last Updated
+        name: last_updated
+        type: date
+        required: true
+        description: Date when the privacy policy was last updated
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+  # Terms of Service page
+  - label: Terms of Service
+    name: terms-of-service
+    path: content/terms-of-service.md
+    type: file
+    fields:
+      - label: Title
+        name: title
+        type: string
+        required: true
+      - label: Meta Description
+        name: description
+        type: text
+      - label: Hero Title
+        name: hero_title
+        type: string
+        required: true
+      - label: Hero Description
+        name: hero_description
+        type: text
+        required: true
+      - label: Hero Background Image
+        name: hero_image
+        type: image
+        required: true
+      - label: Last Updated
+        name: last_updated
+        type: date
+        required: true
+        description: Date when the terms of service were last updated
+      - label: Main Content
+        name: body
+        type: rich-text
+        required: true
+
+# Reusable components
+components:
+  hero:
+    label: Hero Section
+    type: object
+    fields:
+      - name: headline
+        label: Headline
+        type: string
+        required: true
+      - name: subheading
+        label: Subheading
+        type: text
+      - name: image
+        label: Background Image
+        type: image
+      - name: cta_button
+        label: Call-to-Action Button
+        type: object
+        fields:
+          - name: text
+            label: Button Text
+            type: string
+          - name: url
+            label: Button URL
+            type: string
+
+  seo:
+    label: SEO Settings
+    type: object
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+        required: true
+      - name: description
+        label: Meta Description
+        type: text
+        required: true
+      - name: keywords
+        label: Keywords
+        type: string
+        list: true
+      - name: og_image
+        label: Social Media Image
+        type: image
+
+# Global settings
+settings:
+  content:
+    merge: true

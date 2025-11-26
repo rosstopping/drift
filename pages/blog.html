@@ -1,0 +1,56 @@
+<layout title="{frontmatter.title}" src="main.html">
+
+    <include src="hero.html" hero_image="{frontmatter.hero_image}" hero_title="{frontmatter.hero_title}"
+        hero_description="{frontmatter.hero_description}" hero_cta_text="" hero_cta_url=""></include>
+
+    <!-- Blog Posts Grid -->
+    <div class="py-20 ">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ForEach content="posts" as="post">
+                    <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden">
+                        <!-- Featured Image -->
+                        <div class="aspect-video overflow-hidden">
+                            <a href="{post.link}">
+                                <img src="{post.featured_image}" alt="{post.title}"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+
+                        <!-- Post Content -->
+                        <div class="p-6">
+                            <!-- Meta Information -->
+                            <div class="flex items-center justify-between text-sm text-zinc-500 mb-3">
+                                <span>{post.author}</span>
+                                <time>{post.date}</time>
+                            </div>
+
+                            <!-- Title -->
+                            <h2 class="text-xl font-semibold text-zinc-800 mb-3">
+                                <a href="{post.link}" class="hover:text-green-600 transition-colors">
+                                    {post.title}
+                                </a>
+                            </h2>
+
+                            <!-- Excerpt -->
+                            <p class="text-zinc-600 mb-4">
+                                {post.excerpt}
+                            </p>
+
+                            <!-- Read More Link -->
+                            <a href="{post.link}"
+                                class="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors">
+                                Read More
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </ForEach>
+            </div>
+        </div>
+    </div>
+
+</layout>

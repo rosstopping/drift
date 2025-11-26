@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+.font-display {
+	font-family: "Crimson Text", serif;
+}
+
+.font-sans {
+	font-family: "Karla", sans-serif;
+}

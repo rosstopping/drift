@@ -1,0 +1,116 @@
+<layout title="{frontmatter.title}" src="main.html">
+
+    <include src="hero.html" hero_image="{frontmatter.hero_image}" hero_title="{frontmatter.hero_headline}"
+        hero_description="{frontmatter.hero_subheading}" hero_cta_text="{frontmatter.hero_cta_text}"
+        hero_cta_url="{frontmatter.hero_cta_url}"></include>
+
+    <div class="px-6 md:px-12 pt-0 md:pt-32 pb-20">
+        <h1 class="text-3xl md:text-5xl max-w-2xl mx-auto leading-tight text-center font-display font-semibold text-zinc-800"
+            data-aos="fade-in">
+            {frontmatter.section_headline}</h1>
+    </div>
+
+    <!-- Services Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 relative mb-12">
+        <div class="w-full h-1/2 bg-green-950/80 absolute bottom-0 left-0 -mb-12"></div>
+
+        <!-- Dynamic Services from CMS -->
+        <ForEach content="posts" as="post" count="3">
+            <a href="{post.link}"
+                class="relative h-72 flex items-end justify-end px-6 lg:px-12 pb-12 text-right group bg-black"
+                data-aos="fade-down" data-aos-delay="100">
+                <div class="relative z-10">
+                    <h3 class="font-display text-2xl md:text-3xl font-semibold text-white mb-6">{post.title}</h3>
+                    <span class="border-b border-white text-white pb-1">Read more</span>
+                </div>
+                <img src="{post.featured_image}"
+                    class="absolute inset-0 w-full h-full object-cover object-right group-hover:opacity-50 transition-opacity ease-in-out duration-300">
+                <div
+                    class="absolute bottom-0 right-0 w-full h-full bg-gradient-to-tl from-black to-transparent opacity-75">
+                </div>
+            </a>
+        </ForEach>
+    </div>
+
+
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 px-12 pt-24">
+        <div>
+            <h2 data-aos="fade-in"
+                class="text-3xl md:text-5xl leading-tight text-left font-display font-semibold text-gray-800 px-0 md:px-12">
+                {frontmatter.about_headline}
+            </h2>
+            <div class="prose leading-relaxed text-zinc-600 px-0 md:px-12 py-6 md:py-12">
+                <p data-aos="fade-in" class="">
+                    {frontmatter.about_text_1}
+                </p>
+            </div>
+            <img data-aos="fade-in" src="{frontmatter.about_image_1}" class="w-full object-cover object-top mt-6">
+            <div class="mt-6 prose leading-relaxed text-zinc-600 px-0 md:px-12 py-6 md:py-12">
+                <p data-aos="fade-in" class="">
+                    {frontmatter.about_text_2}
+                </p>
+                <p data-aos="fade-in" class="mt-6">
+                    {frontmatter.about_text_3}
+                </p>
+            </div>
+        </div>
+        <div class="md:pt-32">
+            <img data-aos="fade-in" src="{frontmatter.about_image_2}" class="w-full object-cover object-top">
+            <div class="mt-6 prose leading-relaxed text-zinc-600 px-0 md:px-12 py-6 md:py-12">
+                <p data-aos="fade-in" class="">
+                    {frontmatter.about_text_4}
+                </p>
+                <p data-aos="fade-in" class="mt-6">
+                    {frontmatter.about_text_5}
+                </p>
+                <p data-aos="fade-in" class="mt-6">
+                    <a href="{frontmatter.about_link_url}" class="underline">{frontmatter.about_link_text}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="py-12 md:py-24">
+        <div class="container mx-auto px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <div data-aos="fade-in" class="mb-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                        class="w-12 h-12 text-green-950/60 mx-auto mb-6">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                    </svg>
+                </div>
+                <blockquote data-aos="fade-in" data-aos-delay="100"
+                    class="text-lg md:text-2xl lg:text-3xl font-light text-gray-700 leading-relaxed mb-8 italic">
+                    "{frontmatter.testimonial_quote}"
+                </blockquote>
+                <div data-aos="fade-in" data-aos-delay="200" class="mb-8">
+                    <p class="text-lg font-medium text-gray-800">— {frontmatter.testimonial_name}</p>
+                    <p class="text-gray-600">{frontmatter.testimonial_title}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-20 container mx-auto flex flex-col md:flex-row" data-aos="fade-up">
+        <div class="bg-green-950/80 text-white text-center w-full md:w-1/2 py-24 md:py-64 px-6">
+            <h4 class="text-sm uppercase font-light tracking-widest mb-1">{frontmatter.cta_subtitle}</h4>
+            <h3 class="font-display text-xl md:text-2xl tracking-wider">{frontmatter.cta_title}</h3>
+
+            <a href="{frontmatter.cta_button_url}"
+                class="no-underline mt-10 inline-flex justify-between items-center gap-4 hover:gap-8  text-gray-900 py-3 px-6 hover:px-8 max-w-xl uppercase text-sm tracking-widest bg-white transition-all ease-in-out rounded-full border border-zinc-500 hover:border-transparent">
+                <span>{frontmatter.cta_button_text}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <div class="w-full md:w-1/2 relative h-64 md:h-auto">
+            <img src="{frontmatter.cta_image}" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+    </div>
+
+</layout>
